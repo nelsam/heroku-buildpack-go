@@ -102,6 +102,7 @@ GOROOT=$cache/$ver/go export GOROOT
 GOPATH=$build/.heroku/g export GOPATH
 PATH=$GOROOT/bin:$PATH
 
+rm -rf $GOPATH/*
 
 if ! (test -d $build/Godeps || (which hg >/dev/null && which bzr >/dev/null))
 then
@@ -142,7 +143,7 @@ then
     done
 fi
 
-FLAGS=(-u -v -tags heroku)
+FLAGS=(-v -tags heroku)
 if test -f "$env_dir/GO_GIT_DESCRIBE_SYMBOL"
 then
     git_describe=$(git describe --tags --always)

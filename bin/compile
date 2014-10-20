@@ -142,7 +142,7 @@ then
     done
 fi
 
-FLAGS=(-tags heroku)
+FLAGS=(-v -tags heroku)
 if test -f "$env_dir/GO_GIT_DESCRIBE_SYMBOL"
 then
     git_describe=$(git describe --tags --always)
